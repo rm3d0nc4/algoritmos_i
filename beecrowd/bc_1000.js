@@ -1,6 +1,5 @@
-import {input, print} from '../io_utils.js'
 function main() {
-print('Hello World!')
+console.log('Hello World!')
 
 }
 main()
