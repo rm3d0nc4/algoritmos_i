@@ -7,7 +7,7 @@ function calcular_quadrado(n){
     return resultado
 }
 */
-import { input } from './../../io_utils.js';
+import { input } from '../io_utils.js';
 
 function main() {
 
