@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import { ler_numeros } from './../io_utils.js';
 
 function main() {
-    const nums = ler_numeros_tipo2('5 números inteiros diferentes, separados por espaço')
+    const nums = ler_numeros('5 números inteiros diferentes, separados por espaço')
     const maior_e_menor = seleciona_maior_e_menor(nums[0],nums[1],nums[2],nums[3],nums[4],)
     console.log(`Maior: ${maior_e_menor[0]}, Menor: ${maior_e_menor[1]}`)
 }

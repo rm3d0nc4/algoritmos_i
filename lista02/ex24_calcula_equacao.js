@@ -1,8 +1,8 @@
-import { ler_numeros_tipo2 } from './../io_utils.js';
+import { ler_numeros } from './../io_utils.js';
 
 function main() {
 
-    const [a,b,c] = ler_numeros_tipo2('o valor de 3 coeficiente a,b e c (separados por espaço)')
+    const [a,b,c] = ler_numeros('o valor de 3 coeficiente a,b e c (separados por espaço)')
 
 
     const result = calcula_equacao(a,b,c)

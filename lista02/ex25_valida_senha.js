@@ -1,8 +1,8 @@
-import {ler_numeros_tipo2 } from './../io_utils.js';
+import {ler_numeros } from './../io_utils.js';
 
 function main() {
 
-    const senha_acesso = ler_numeros_tipo2('a senha de acesso')
+    const senha_acesso = ler_numeros('a senha de acesso')
 
     const verificar_validade = validar_senha(senha_acesso[0])
 

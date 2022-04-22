@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import {ler_numeros } from './../io_utils.js';
 
 function main() {
-    const notas_aluno = ler_numeros_tipo2('as duas notas do aluno, separadas por espaço')
+    const notas_aluno = ler_numeros('as duas notas do aluno, separadas por espaço')
     const situacao = calcula_media_aluno(notas_aluno[0], notas_aluno[1])
     console.log(`Situação: ${situacao}`)
 }

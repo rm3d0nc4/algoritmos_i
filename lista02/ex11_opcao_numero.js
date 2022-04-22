@@ -1,8 +1,8 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import { ler_numeros } from './../io_utils.js';
 
 function main() {
-    const opcao = ler_numeros_tipo2('1 número(1, 2 ou 3)')
-    const numeros = ler_numeros_tipo2('3números, separados por espaço')
+    const opcao = ler_numeros('1 número(1, 2 ou 3)')
+    const numeros = ler_numeros('3números, separados por espaço')
     const opcao_escolhida = identifica_opcao(opcao[0], numeros[0],numeros[1],numeros[2])
     console.log(`Opção escolhida: ${opcao_escolhida}`)
 }

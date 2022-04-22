@@ -1,10 +1,10 @@
-import { ler_numeros_tipo2 } from "../io_utils.js"
+import { ler_numeros } from "../io_utils.js"
 
 function main() {
- const [numero] = ler_numeros_tipo2('Um número que contenha 4 dígitos!')
- 
- const verifica_quadrado_perfeito = eh_quadrado_perfeito(numero)
- console.log(verifica_quadrado_perfeito)
+    const [numero] = ler_numeros('Um número que contenha 4 dígitos!')
+
+    const verifica_quadrado_perfeito = eh_quadrado_perfeito(numero)
+    console.log(verifica_quadrado_perfeito)
 
 }
 

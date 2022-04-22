@@ -1,4 +1,4 @@
-import { input, ler_data } from './../io_utils.js';
+import { ler_data } from './../io_utils.js';
 
 function main() {
     const input08_nascimento = ler_data('de nascimento')

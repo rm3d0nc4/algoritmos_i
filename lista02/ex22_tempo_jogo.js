@@ -6,7 +6,7 @@ function main() {
 
     const result = calcula_tempo_jogo(inicio, fim)
 
-    console.log(result)
+    console.log(`O jogo durou ${result[0]} horas e ${result[1]} minutos`)
                 // tempo = Math.abs(fim - inicio)
                 // tempo = 24:00  11:00 - 12:05  
 }

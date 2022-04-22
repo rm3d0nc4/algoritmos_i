@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import { ler_numeros } from './../io_utils.js';
 
 function main() {
-    const prof1 = ler_numeros_tipo2('a quantidade de horas/aula dadas e valor recebido por hora do Profesor 1 (separados por espaço)')
+    const prof1 = ler_numeros('a quantidade de horas/aula dadas e valor recebido por hora do Profesor 1 (separados por espaço)')
     const prof2 = ler_numeros_tipo2('a quantidade de horas/aula dadas e valor recebido por hora do Profesor 2 (separados por espaço)')
     const maior_salario = salario_maior(prof1, prof2)
     console.log(maior_salario)

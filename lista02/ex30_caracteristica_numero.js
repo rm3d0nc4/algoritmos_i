@@ -1,10 +1,10 @@
-import { ler_numeros_tipo2 } from "../io_utils.js"
+import { ler_numeros } from "../io_utils.js"
 
 function main() {
- const [numero] = ler_numeros_tipo2('Um número que contenha 4 dígitos!')
- 
- const verifica_caracteristica = caracteristica(numero)
- console.log(verifica_caracteristica)
+    const [numero] = ler_numeros('Um número que contenha 4 dígitos!')
+    
+    const verifica_caracteristica = caracteristica(numero)
+    console.log(verifica_caracteristica)
 
 }
 

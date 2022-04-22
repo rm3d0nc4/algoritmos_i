@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo1 } from './../io_utils.js';
+import {ler_numeros } from './../io_utils.js';
 
 function main() {
-    const input05 = ler_numeros_tipo1(3)
+    const input05 = ler_numeros('3 valores, separados por espaço')
     const orderna_nums = ordena3_numeros(input05[0],input05[1], input05[2])
     console.log(`Ordem: ${orderna_nums[0]}, ${orderna_nums[1]}, ${orderna_nums[2]}`)
 }

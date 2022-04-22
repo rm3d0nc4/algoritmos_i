@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo1 } from './../io_utils.js';
+import { ler_numeros } from './../io_utils.js';
 
 function main() {
-    const input09 = ler_numeros_tipo1(1)
+    const input09 = ler_numeros('um numero inteiro, entre 0 e 100')
     const primo_ou_nao = checar_numero_primo(input09[0])
     console.log(primo_ou_nao)
 }
