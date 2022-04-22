@@ -9,13 +9,7 @@ export function print(mensagem, ...optionalParams){
 }
 
 // Função para auxiliar na leitura dos números
-export function ler_numeros_tipo1(quantidade, tipo = 'valor(es)') {
-    const numero = input(`Digite o valor de ${quantidade} ${tipo}:`).split(' ').map(Number)
-    return numero
-}
-
-// Função para auxiliar na leitura dos números
-export function ler_numeros_tipo2(o_que) {
+export function ler_numeros(o_que) {
         const numero = input(`Digite ${o_que}:`).split(' ').map(Number)
         return numero
 }
