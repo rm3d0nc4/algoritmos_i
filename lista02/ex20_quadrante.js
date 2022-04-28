@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import {ler_numeros } from './../io_utils.js';
 
 function main() {
-    const input20 = ler_numeros_tipo2('o valor de um ângulo (entre 0 e 360)')
+    const input20 = ler_numeros('o valor de um ângulo (entre 0 e 360)')
 
     const result = get_quadrante(input20[0])
 

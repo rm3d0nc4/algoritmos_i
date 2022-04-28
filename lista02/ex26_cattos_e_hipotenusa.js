@@ -1,9 +1,9 @@
-import {ler_numeros_tipo2 } from './../io_utils.js';
+import {ler_numeros } from './../io_utils.js';
 
 // Não entendi
 
 function main() {
-    const lados_do_triangulo = ler_numeros_tipo2('o valor dos três lados de um triângulo (entre espaços)')
+    const lados_do_triangulo = ler_numeros('o valor dos três lados de um triângulo (entre espaços)')
     
     const [cateto1,cateto2,hipotenusa] = extrair_catetos_e_hipotenusa(lados_do_triangulo[0], lados_do_triangulo[1],lados_do_triangulo[2])
 

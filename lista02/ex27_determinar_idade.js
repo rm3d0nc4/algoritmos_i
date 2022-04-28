@@ -1,13 +1,12 @@
 import { ler_data } from './../io_utils.js';
 
 function main() {
-    const input08_nascimento = ler_data('de nascimento')
-    const input08_atual = ler_data('atual')
-    const idade = calcula_idade(input08_atual, input08_nascimento)
-    console.log(`Você ${idade[0]} anos completos!`)
+    const data_nascimento = ler_data('de nascimento')
+    const data_atual = ler_data('atual')
+    const idade = calcula_idade(data_atual, data_nascimento)
+    console.log(`Você ${idade[0]} ano(s), ${idade[1]} mes(es) e ${idade[2]} dia(s)`)
 }
 
-//Questão 8
 function calcula_idade(data_atual, data_nascimento) {
     
     let [dia_atual, mes_atual, ano_atual] = data_atual

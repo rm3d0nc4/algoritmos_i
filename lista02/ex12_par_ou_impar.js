@@ -1,6 +1,6 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import { ler_numeros } from './../io_utils.js';
 function main() {
-    const insere_numero = ler_numeros_tipo2('1 número inteiro')
+    const insere_numero = ler_numeros('1 número inteiro')
     const verifica_p_ou_i = par_ou_impar(insere_numero[0])
     console.log(`O número é: ${verifica_p_ou_i}`)
 }

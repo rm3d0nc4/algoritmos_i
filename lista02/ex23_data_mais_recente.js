@@ -1,6 +1,6 @@
-import { input, ler_data } from './../io_utils.js';
+import { ler_data } from './../io_utils.js';
 
-// Não concluída!!!
+
 function main() {
     const data1 = ler_data()
     const data2 = ler_data()

@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo1 } from './../io_utils.js';
+import { ler_numeros } from './../io_utils.js';
 
 function main() {
-    const input02 = ler_numeros_tipo1(2)
+    const input02 = ler_numeros('2 valores, separados por espaço')
     const compara2 = compara_2numeros(input02[0], input02[1])
     console.log(compara2)
 }

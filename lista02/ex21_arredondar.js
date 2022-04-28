@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import {ler_numeros } from './../io_utils.js';
 
 function main() {
-    const input21 = ler_numeros_tipo2('um número para arredondar')
+    const input21 = ler_numeros('um número para arredondar')
     const result = arredondar(input21[0])
 
     console.log(`Ǹúmero arredondado: ${result}`)

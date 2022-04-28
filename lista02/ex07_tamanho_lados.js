@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo1 } from './../io_utils.js';
+import {  ler_numeros } from './../io_utils.js';
 
 function main() {
-    const input07 = ler_numeros_tipo1(3)
+    const input07 = ler_numeros('3 valores equivalentes aos lados de um triângulo, separados por espaço')
     const class_triangulo = classifica_triangulo2(input07[0],input07[1],input07[2])
     console.log(`O triângulo é: ${class_triangulo}`)
 }

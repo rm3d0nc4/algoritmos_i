@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo1 } from './../io_utils.js';
+import { ler_numeros } from './../io_utils.js';
 
 function main() {
-    const input04 = ler_numeros_tipo1(1)
+    const input04 = ler_numeros('um número de 2 dígitos')
     const compara_algarismos = verifica_algarismos_dezena(input04[0])
     console.log(compara_algarismos)
 }

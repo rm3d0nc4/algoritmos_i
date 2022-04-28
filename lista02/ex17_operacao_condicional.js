@@ -1,4 +1,4 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import { input} from './../io_utils.js';
 
 function main() {
     const variavel1 = Number(input('Digite o primeiro valor:'))

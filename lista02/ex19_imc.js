@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import {ler_numeros } from './../io_utils.js';
 
 function main() {
-    const input19 = ler_numeros_tipo2('a sua altura (m) e peso (kg), separados por esṕaço')
+    const input19 = ler_numeros('a sua altura (m) e peso (kg), separados por esṕaço')
     const resultado = calcula_imc(input19[0],input19[1])
 
     console.log(resultado)

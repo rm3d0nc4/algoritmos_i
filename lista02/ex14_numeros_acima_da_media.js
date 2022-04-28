@@ -1,7 +1,7 @@
-import { input, ler_numeros_tipo2 } from './../io_utils.js';
+import {ler_numeros } from './../io_utils.js';
 
 function main() {
-    const input14 = ler_numeros_tipo2('5 Inteiros diferentes, separados por espaço')
+    const input14 = ler_numeros('5 Inteiros diferentes, separados por espaço')
     const resultado = acima_da_media(input14[0],input14[1],input14[2],input14[3],input14[4])
     console.log(`Maiores que a média: ${resultado}`)
 
