@@ -1,139 +1,54 @@
-import { count } from 'console'
-import * as fs from 'fs'
-import prompt from 'prompt-sync'
-const input = prompt()
-
-function main() {
-
-    let dashboard = '========== DASHBOARD =========='
-    dashboard+= '\n1) Imprimir palavras com mais de 20 caracteres'
-    
-    // Exercício 9.1
-    const words = read_words('words.txt')
-    console.log(`${words.length} palavras carregadas`)
-
-    // get_words_with_n_or_more_characters(words)
-
-    // qtd_words_has_no_letter(words)
-
-    
-    
-    // Exercício 9.2
-    
-    // qtd_word_has_no_forbbiden_letters(words)
-    // const word = input('Digite a palavra:')
-    // const has = has_no_letter(word)
-    // console.log(has)
+import * as mf from "./main_functions.js"
+import { show_menu, to_continue, get_number_of_range } from "./utils_functions.js"
 
 
-    // Exercício 9.3
+export function menu() {
 
-    const ll = uses_only('abac', 'ab')
-    console.log(ll)
+    const [min, max] = [0,7]
+    let option
 
-}
+    console.log('Bem-vindo! Leia uma arquivo de texto para prosseguir.')
+    let words = mf.read_words()
 
-function read_words(path) {
-    const words = fs.readFileSync(path, {encoding: 'utf-8'}).split('\n')
-    
-    return words
-}
+    while(option !=0 ) {
+        
+        to_continue()
+        show_menu()
+        option = get_number_of_range('Digite uma opção:', min, max)
 
-// Exercício 9.1
-function get_words_with_n_or_more_characters(words, letters_qtd) {
-    
-    for (let word of words) {
-        if(word.length>letters_qtd){
-            console.log(word)
+        if(option === 1) {
+
+            mf.get_words_with_more_n_characters(words)
+
+        } else if(option===2) {
+
+            mf.qtd_words_has_no_letter(words)
+
+        } else if(option===3) {
+
+            mf.qtd_word_has_no_forbbiden_letters(words)
+
+        } else if(option===4) {
+
+            mf.qtd_words_with_only_selected_letters(words)
+
+        } else if(option===5) {
+
+            mf.qtd_words_with_uses_all_mandatory_letters(words)
+
+        } else if(option===6) {
+
+            mf.get_words_that_is_abecedarian(words)
+
+        } else if(option===7) {
+
+            const new_words = mf.read_words()
+            words = new_words
+        } else if(option===8) {
+
         }
+
     }
 }
 
-
-// Exercício 9.2
-
-function has_no_letter(word, letter) {
-    for (let item of word ) {
-        if(item ===letter) {
-            return false
-        }
-    }
-    return true
-}
-
-function qtd_words_has_no_letter(words) {
-    let counter = 0
-    const letter = input('Sem qual letra? ')
-
-    for (let word of words) {
-
-        if(has_no_letter(word, letter)) {
-            console.log(word)
-
-            counter++
-        }
-    }
-    const percent = ((counter/words.length)*100).toFixed(3)
-    console.log(`Existem ${counter} (${percent}%) palavras que não possuem a letra ${letter}`)
-}
-
-
-// Exercício 9.3
-
-function qtd_word_has_no_forbbiden_letters(words) {
-    let counter = 0
-    const forbbiden_letters = input('Letras proibidas:')
-
-    for (let word of words) {
-        if (avoids(word, forbbiden_letters)) {
-            counter++
-        }
-    }
-
-    console.log(`${counter} palavras não contém as letras proibidas!`)
-}
-
-function avoids(word, forbbiden_letters) {
-    for(let letter of word) {
-        if(contains(letter, forbbiden_letters)) {
-            return false
-        }
-    }
-    return true
-}
-
-function contains(letter,forbbiden_letters){
-
-    for(let forbbiden_letter of forbbiden_letters) {
-        if (letter === forbbiden_letter){
-            return true
-        }
-    }
-    return false
-}
-
-
-// Exercício 9.4
-
-// function uses_only(word, letters) {
-//     for (let letter of word) {
-//         if(contains_only(letter, letters)) {
-//             return true
-//         }
-//     }
-//     return false
-// }
-
-// function contains_only(letter, letters) {
-//     for (let current_letter of letters) {
-//         if(letter === current_letter) {
-//             return true
-//         }
-//     }
-//     return false
-// }
-
-
-
-
-main()
+menu()
