@@ -6,6 +6,7 @@ setSpeed(200); // Velocidade do ponteiro
 forward(distance)  // Desenhar a linha
 right(angle) // Girar (graus) a direita
 left(angle) // Girar (graus) a esquerda
+angle(angle) // Girar, de acordo com o ângulo	   
 goto(x,y) // Ir para um ponto (x,y) específico
 clear() // Limpar Desenho	       
 penup() // Não desenhar	       
@@ -14,7 +15,6 @@ strangeLine(250) // Desenhar a linha em um formato aleatório (rasbiscos)
 // strangeCircle(diametro) // Desenha um círculo com rabiscos
 // strangeSquare(area,intervalo)// Desenhar quadrado padronizado
 reset()
-angle(angle)	   
 width(width) // Largura da linha      
 
 // Cores da linha
@@ -24,3 +24,8 @@ color("red")
 color("#ff0000")
 */
 
+showGrid(20); //Escala da malha
+setSpeed(200); // Velocidade do ponteiro     
+width(5)
+color('red')
+forward(200)
