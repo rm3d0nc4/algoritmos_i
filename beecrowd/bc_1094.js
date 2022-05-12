@@ -16,28 +16,42 @@ function main() {
     let total_sapos = 0
 
     let counter = 1
+
     while(counter <= qtd_experiments) {
+        let data = lines[counter].split(' ')
+        
 
-        const data = lines[counter].split(' ')
-        const n_of_experiments = Number(data[0]) 
-        const animal = data[1]
+        let n_of_experiments = Number(data[0]) 
+        let animal = data[1]
+        
+        if(animal === 'C'){
+            total_coelhos+=n_of_experiments
+        } 
+        else if( animal === 'R') {
+            total_ratos+=n_of_experiments
+        } else if(animal === 'S') {
+            total_sapos+=n_of_experiments
+        }
 
-        console.log(`Número de experimentos: ${n_of_experiments}, Animal: ${animal}`)
 
-        console.log(animal)
-    
-        console.log(animal == 'R')
 
         counter++
 
     }
 
-}
+    const total_cobaias = total_coelhos+total_sapos+total_ratos
 
-function get_number_of_experiments_and_animal(line) {
-    const [number_of_experiments, animal] = line.split(' ')
+    const percentual_coelhos = ((total_coelhos/total_cobaias)*100).toFixed(2)
+    const percentual_sapos = ((total_sapos/total_cobaias)*100).toFixed(2)
+    const percentual_ratos = ((total_ratos/total_cobaias)*100).toFixed(2)
 
-    return [animal, Number(number_of_experiments)]
+    console.log(`Total de coelhos: ${total_coelhos}`)
+    console.log(`Total de ratos: ${total_ratos}`)
+    console.log(`Total de sapos: ${total_sapos}`)
+    console.log(`Percentual de coelhos: ${percentual_coelhos} %`)
+    console.log(`Percentual de ratos: ${percentual_ratos} %`)
+    console.log(`Percentual de sapos: ${percentual_sapos} %`)
+
 }
 
 main()
