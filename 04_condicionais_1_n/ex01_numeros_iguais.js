@@ -1,4 +1,4 @@
-import { ler_numeros } from './../io_utils.js';
+import { ler_numeros } from '../io_utils.js';
 
 function main() {
     const input01 = ler_numeros('3 valores, separados por espaço')

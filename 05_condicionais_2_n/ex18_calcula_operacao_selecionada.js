@@ -1,4 +1,4 @@
-import {ler_numeros } from './../io_utils.js';
+import {ler_numeros } from '../io_utils.js';
 
 function main() {
     const [valor1, valor2, operacao] = ler_numeros(' 2 valores e o número da operação, separados por espaço')

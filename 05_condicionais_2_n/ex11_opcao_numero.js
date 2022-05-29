@@ -1,4 +1,4 @@
-import { ler_numeros } from './../io_utils.js';
+import { ler_numeros } from '../io_utils.js';
 
 function main() {
     const opcao = ler_numeros('1 número(1, 2 ou 3)')

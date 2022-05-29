@@ -1,4 +1,4 @@
-import { ler_numeros } from './../io_utils.js';
+import { ler_numeros } from '../io_utils.js';
 
 function main() {
     const numero = ler_numeros('um número equivalente a um dia da semana')

@@ -1,4 +1,4 @@
-import { ler_numeros, input } from './../io_utils.js';
+import { ler_numeros, input } from '../io_utils.js';
 
 function main() {
     const carne = input('Tipo de carne (F - filé, A - alcatra, P - picanha):').toUpperCase()
