@@ -24,25 +24,28 @@ function main() {
 }
 
 function get_mdc(n1, n2) {
-    let counter = 1
-    let mdc = 1
 
-    while(n1!=1 && n2!=1) {
-        if( eh_divisivel(n1, counter) && eh_divisivel(n2, counter)) {
+    let counter = 2
+    let mdc = 1
+    
+    while(n1!=1 && n2!=1){
+
+        if(eh_divisivel(n1, counter) && eh_divisivel(n2, counter)){
             n1/=counter
             n2/=counter
             mdc*=counter
         } else if(eh_divisivel(n1, counter)) {
             n1/=counter
-        } else if( eh_divisivel(n2, counter)) {
+        } else if(eh_divisivel(n2, counter)){
             n2/=counter
+        } else{
+            counter++
         }
-        counter++
     }
 
     return mdc
 }
 
-const eh_divisivel = (numero, valor) => valor%numero === 0
+const eh_divisivel = (dividendo, divisor) => dividendo%divisor ===0 
 
 main()
