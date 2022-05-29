@@ -1,15 +1,5 @@
 import {ler_numeros, input} from '../io_utils.js'
 
-        // FIZ UMA GAMBIARRA 
-        // FIZ UMA GAMBIARRA 
-        // FIZ UMA GAMBIARRA 
-        // FIZ UMA GAMBIARRA 
-        // FIZ UMA GAMBIARRA 
-        // FIZ UMA GAMBIARRA 
-        // FIZ UMA GAMBIARRA 
-        // FIZ UMA GAMBIARRA 
-        // FIZ UMA GAMBIARRA 
-        // FIZ UMA GAMBIARRA 
 
 function main() {
 
@@ -28,18 +18,22 @@ function main() {
      let n_bilhete = 1 
      let qtd_bagagem = 0
 
-     while(n_bilhete!=0) {
+     while(true) {
         [n_bilhete, qtd_bagagem] = ler_numeros('o nº do seu bilhete e o nº de bagagens')
+
+        if(n_bilhete===0){
+            break
+        }
+
         total_passageiros++
         peso_total_passageiros+=70
         peso_total_bagagens+=(qtd_bagagem*10)
-        console.log(total_passageiros)
 
     }
 
-    console.log(`Quantidade de passageiros: ${total_passageiros-1}`)
+    console.log(`Quantidade de passageiros: ${total_passageiros}`)
     console.log(`Volume total de bagagens: ${peso_total_bagagens} KG`)
-    console.log(`Peso total dos passageiros: ${peso_total_passageiros-70}`)
+    console.log(`Peso total dos passageiros: ${peso_total_passageiros}`)
     console.log(`Volume total de carga: ${peso_total_contatineres} Kg`)
     
     const peso_voo_s_combustivel = peso_total_bagagens+peso_total_contatineres+(peso_total_passageiros-70)
