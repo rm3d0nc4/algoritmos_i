@@ -12,12 +12,6 @@ function main() {
         }
         contador++
     }
-
-    for(let counter = l_inferior; counter<=l_superior; counter++){
-        if(eh_primo(counter)){
-            console.log(counter)
-        }
-    }
 }
 
 function eh_primo(n){

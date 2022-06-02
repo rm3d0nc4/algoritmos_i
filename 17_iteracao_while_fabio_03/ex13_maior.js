@@ -14,14 +14,6 @@ function main() {
         }
         contador++
     }
-
-    // for(let counter = 0; counter<n; counter++){
-    //     const [numero] = ler_numeros('um número')
-    //     if(numero>maior){
-    //         maior=numero
-    //     }
-    // }
-
     console.log(`Maior: ${maior}`)
 }
 

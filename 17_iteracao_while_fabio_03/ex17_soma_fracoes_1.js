@@ -11,10 +11,6 @@ function main() {
         contador++
     }
 
-    // for(let counter= 1; counter<=n;counter++){
-    //     soma+=(1/contador)
-    // }
-
     console.log(`Soma: ${soma}`)
 
 }

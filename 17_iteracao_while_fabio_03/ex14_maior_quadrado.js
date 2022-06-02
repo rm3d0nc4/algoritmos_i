@@ -11,10 +11,6 @@ function main() {
         contador++
     }
 
-    // for(let counter=1; counter**2<=n; counter++){
-    //     maior_quadrado = counter**2
-    // }
-
     console.log(`Maior quadrado menor: ${maior_quadrado}`)
 }
 

@@ -23,17 +23,6 @@ function main() {
         contador++
     }
 
-    // for(let counter =1; counter<=n_pessoas; counter++){
-
-    //     const [salario, n_filhos] = ler_numeros(' o salário e o nº de filhos')
-
-    //     n_filhos_total+=n_filhos
-    //     salarios_total+=salario
-    //     if(salario>1000){
-    //         salarios_acima_1000++
-    //     }
-    // }
-
     const med_salarial_sem_filhos = salarios_total/n_pessoas
     const med_numero_filhos = n_filhos_total/n_pessoas
     const perc_pessoas_com_salario_acima_de_1000 = (salarios_acima_1000/n_pessoas)*100

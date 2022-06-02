@@ -12,12 +12,6 @@ function main() {
         soma+=numero
         contador++
     }
-
-    // for(let counter= 0; counter <n; counter++){
-    //     const [numero] = ler_numeros('um número')
-    //     soma+=numero
-    // }
-
     const media = soma/n
 
     console.log(`Soma: ${soma}`)

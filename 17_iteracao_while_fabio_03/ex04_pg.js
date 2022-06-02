@@ -8,14 +8,6 @@ function main() {
 
     let counter = 1
 
-    // for(let contador = 1; contador<=limite; contador++){
-    //     const elemento = a0*razao**(counter-1)
-
-    //     if(elemento<limite){
-    //         console.log(elemento)
-    //     }
-    // }
-
     while(counter<= limite){
         const elemento = a0*razao**(counter-1)
 

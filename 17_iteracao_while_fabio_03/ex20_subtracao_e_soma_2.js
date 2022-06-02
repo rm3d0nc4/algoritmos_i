@@ -16,12 +16,6 @@ function main() {
         contador++
     }
 
-    // for(let counter=1;counter<=n;counter++){
-    //     resultado+=(1/counter)
-    //     counter++
-    //     resultado-=(1/counter)
-    // }
-
     console.log(`Resultado: ${resultado}`)
 }
 

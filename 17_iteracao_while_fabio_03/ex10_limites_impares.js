@@ -14,13 +14,6 @@ function main() {
         }
         contador++
     }
-    
-    // console.log('Ímpares')
-    // for(let counter = l_inferior; counter<=l_superior; counter++){
-    //     if(eh_impar(counter)){
-    //         console.log(counter)
-    //     }
-    // }
 }
 
 const eh_impar = n => !(n%2===0)

@@ -11,12 +11,6 @@ function main() {
         contador++
     }
     console.log(`Soma de todos os número ente 1 e ${n}: ${soma}`)
-
-    // for(let counter = 1; counter<=n; counter++){
-    //     soma+=counter
-    // }
-    // console.log(`Soma de todos os número ente 1 e ${n}: ${soma}`)
-
 }
 
 main()

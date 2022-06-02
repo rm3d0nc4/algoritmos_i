@@ -17,12 +17,6 @@ function main() {
 
         contador++
     }
-
-    // for(let counter= 1; counter<n; counter++){
-    //     console.log(atual)
-    //     atual+=anterior
-    //     anterior = atual-anterior
-    // }
 }
 
 main()

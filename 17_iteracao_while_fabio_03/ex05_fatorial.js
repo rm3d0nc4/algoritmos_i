@@ -7,11 +7,7 @@ function main() {
 
     let numero = n
     let fatorial = 1
-
-    // for(let num =1; num<=n; num++){
-    //     fatorial*=num
-    // }
-
+    
     while(numero>=1){
         fatorial*=numero
         numero--

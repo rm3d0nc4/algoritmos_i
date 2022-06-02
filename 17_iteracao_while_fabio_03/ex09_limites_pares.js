@@ -15,13 +15,6 @@ function main() {
         }
         contador++
     }
-
-    // console.log('Pares:')
-    // for(let counter = l_inferior; counter<=l_superior; counter++){
-    //     if(eh_par(counter)){
-    //         console.log(counter)
-    //     }
-    // }
 }
 
 const eh_par = n => n%2===0

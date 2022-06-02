@@ -12,11 +12,6 @@ function main() {
         sequencia+=(contador+1)
         contador++
     }
-
-    // for(let counter = 1; counter<=n; counter++){
-    //     console.log(sequencia)
-    //     sequencia+=(counter+1)
-    // }
 }
 
 main()
