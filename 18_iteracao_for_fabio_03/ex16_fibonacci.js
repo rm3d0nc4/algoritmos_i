@@ -4,7 +4,6 @@ function main() {
 
     const [n] = ler_numeros("quantos N's primeiros elementos da sequência de Fibonacci")
 
-    let contador = 1
     let atual = 1
     let anterior = 0
 

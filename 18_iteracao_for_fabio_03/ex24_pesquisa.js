@@ -7,10 +7,8 @@ function main() {
     let n_filhos_total = 0
     let salarios_total = 0
     let salarios_acima_1000 = 0
-    
-    let contador = 1
 
-    while(contador<=n_pessoas){
+    for(let counter =1; counter<=n_pessoas; counter++){
 
         const [salario, n_filhos] = ler_numeros(' o salário e o nº de filhos')
 
@@ -19,20 +17,7 @@ function main() {
         if(salario>1000){
             salarios_acima_1000++
         }
-
-        contador++
     }
-
-    // for(let counter =1; counter<=n_pessoas; counter++){
-
-    //     const [salario, n_filhos] = ler_numeros(' o salário e o nº de filhos')
-
-    //     n_filhos_total+=n_filhos
-    //     salarios_total+=salario
-    //     if(salario>1000){
-    //         salarios_acima_1000++
-    //     }
-    // }
 
     const med_salarial_sem_filhos = salarios_total/n_pessoas
     const med_numero_filhos = n_filhos_total/n_pessoas
