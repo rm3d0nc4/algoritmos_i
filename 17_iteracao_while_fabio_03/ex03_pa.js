@@ -6,13 +6,13 @@ function main() {
     let [limite] = ler_numeros('o valor limite da PA')
     let [razao] = ler_numeros('o valor da razão a PA')
 
+    let termo = 1
     let contador = 1
 
-    while(contador<=limite/2){
-        const elemento = a0+(contador-1)*razao
-        console.log(elemento)
+    while (termo< limite){
+        termo = a0+(contador-1)*razao
         contador++
-
+        console.log(termo)
     }
 }
 

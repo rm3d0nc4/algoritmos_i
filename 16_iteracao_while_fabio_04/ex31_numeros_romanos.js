@@ -10,7 +10,14 @@ function main() {
 }
 
 function get_romano(numero) {
-    const n_string = String(numero);
+    let n_string = String(numero);
+
+    if(n_string.length===2){
+        n_string = `0${n_string}`
+        
+    } else if (n_string.length ===1){
+        n_string = `00${n_string}`
+    }
 
     const unidade = Number(n_string[2])
     const dezena = Number(n_string[1])
