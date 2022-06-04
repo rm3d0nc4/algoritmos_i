@@ -13,6 +13,7 @@ function main() {
     let contador = 1
 
     for(let counter = 1; counter<=qtd_boiada; counter++){
+        const nome = input(`Digite o nome do ${contador}º boi`)
         const [id_boi, peso_boi] = ler_numeros(`a identificação e o peso do ${contador}º boi`)
 
         if(counter===1){
