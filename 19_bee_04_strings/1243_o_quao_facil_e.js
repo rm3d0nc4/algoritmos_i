@@ -1,24 +1,13 @@
-import fs from 'fs'
-import { contar_elemento } from '../io_utils.js';
-const input = fs.readFileSync('1243_o_quao_facil_e_input', 'utf8');
-
-// Descomentar linha abaixo no Beecrowd
-// const input = require('fs').readFileSync('/dev/stdin', 'utf8');
-
-const lines = input.split('\n')
+import {ler_numeros, input, contar_elemento} from '../io_utils.js'
 
 function main() {
 
-    for(let line of lines) {
+    const enunciado = input('Enunciado: ')
 
-        const enunciado = line
-    
-        const media_palavras = get_media_palavras(enunciado)
-        const pontuacao = get_pontuacao(media_palavras)
-                console.log(pontuacao)
-    
-    }
-
+    const media_palavras = get_media_palavras(enunciado)
+    const pontuacao = get_pontuacao(media_palavras)
+    console.log(media_palavras)
+    console.log(pontuacao)
 }
 
 function get_pontuacao(media) {
@@ -43,16 +32,17 @@ function get_media_palavras(enunciado){
     let palavra
 
     for(let indice = 0; indice < palavras.length; indice++){
+        
         palavra = palavras[indice]
-    
-            if((contar_elemento('.',palavra) === 1) && (palavra[palavra.length-1] === '.')){
-                palavra = retirar_ponto(palavras[indice])
-            }
-            
-            if( eh_valida(palavra) && palavra !== ''){
-                tamanho_total_palavras += palavra.length
-                qtd_palavras++
-            }        
+
+        if((contar_elemento('.',palavra) === 1) && (palavra[palavra.length-1] === '.')){
+            palavra = retirar_ponto(palavras[indice])
+        }
+        
+        if( eh_valida(palavra)){
+            tamanho_total_palavras += palavra.length
+            qtd_palavras++
+        }
     }
 
     if(qtd_palavras !== 0) {
@@ -96,8 +86,6 @@ function retirar_ponto(palavra){
     return nova_palavra
 }
 
-
 const eh_letra_maiuscula = n => n>=65 && n<=90
 const eh_letra_minuscula = n => n>=97 && n<=122
-
 main()
