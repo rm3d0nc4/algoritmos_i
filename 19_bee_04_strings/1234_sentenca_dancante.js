@@ -13,7 +13,7 @@ function main() {
     for(let line of lines) {
         const sentenca = line
         const sentenca_dancante = get_sentenca_dancante(sentenca)
-        console.log(sentenca_dancante)
+        console.log(`${sentenca_dancante}`)
     }
 }
 

@@ -1,34 +1,29 @@
-import {ler_numeros, input} from '../io_utils.js'
-// Comentar duas próximas linhas abaixo no Beecrowd
-// import fs from 'fs';
-// const input = fs.readFileSync('1166_led_input.txt', 'utf8');
-
+import fs from 'fs'
+const input = fs.readFileSync('1222_contos_input.txt', 'utf8');
 // Descomentar linha abaixo no Beecrowd
 // const input = require('fs').readFileSync('/dev/stdin', 'utf8');
+const lines = input.split('\n')
 
 function main() {
+    let num_palavras_conto, num_max_linhas, max_caractere_por_linha
+    let conto
+    let qtd_linhas, qtd_paginas
+
+    for(let line = 0; line<lines.length; line++) {
+
+        // const [num_palavras_conto, num_max_linhas, max_caractere_por_linha ] = ler_numeros('número de palavras, número máximo de linhas por página e o número máximo de caracteres por linha')
+        [num_palavras_conto, num_max_linhas, max_caractere_por_linha ] = lines[line].split(' ').map(Number)
+        line++
+        // const conto = input('Conto: ')
+        conto = lines[line]
+
+        qtd_linhas = get_qtd_linhas(conto, max_caractere_por_linha)
+        qtd_paginas = get_qtd_paginas(qtd_linhas, num_max_linhas)
     
-    const conto = input('Conto: ')
-    const [num_palavras_conto, num_max_linhas, max_caractere_por_linha ] = ler_numeros('número de palavras, número máximo de linhas por página e o número máximo de caracteres por linha')
-    const qtd_linhas = get_qtd_linhas(conto, max_caractere_por_linha)
-    const qtd_paginas = get_qtd_paginas(qtd_linhas,2)
-
-    // console.log(`Quantidade de linhas: ${qtd_linhas}`)
-    console.log(`Quantidade de páginas: ${qtd_paginas}`)
-}
-
-function get_qtd_paginas(qtd_linhas, qtd_max_linhas_por_pagina){
-    let qtd_paginas
-
-    if( qtd_linhas % qtd_max_linhas_por_pagina === 0){
-        qtd_paginas = qtd_linhas/qtd_max_linhas_por_pagina
-    } else {
-        qtd_paginas = Math.floor(qtd_linhas/qtd_max_linhas_por_pagina)+1
+        // console.log(`Quantidade de páginas: ${qtd_paginas}`)
+        console.log(qtd_paginas)
     }
-
-    return qtd_paginas
 }
-
 
 function get_qtd_paginas(qtd_linhas, qtd_max_linhas_por_pagina){
     let qtd_paginas
@@ -50,7 +45,7 @@ function get_qtd_linhas(texto, max_caractere_por_linha){
     let proximo_elemento_do_texto
     let pedaco_a_ser_removido
     let nova_linha
-
+    
     for(let elemento = 0; elemento<texto.length; elemento+=max_caractere_por_linha){
         
         linha = extrair_linhas(texto, elemento, max_caractere_por_linha)

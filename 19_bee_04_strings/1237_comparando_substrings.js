@@ -1,44 +1,50 @@
-import {ler_numeros, input} from '../io_utils.js'
+import fs from 'fs';
 
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
-// incompleta
+const input = fs.readFileSync('1237_comparando_substrings_input', 'utf8');
+const lines = input.split('\n');
 
 function main() {
+    let line = 0
+    
+    while(line<lines.length){
+        const str1 = lines[line]
+        line++
+        const str2 = lines[line]
+        
+        const tamanho_substring = get_maior_substring(str1,str2)
+        console.log(tamanho_substring)
+        
+        line++
+    }
 
-    const str1 = input('primeira string: ')
-    const str2 = input('segunda string: ')
-
-    const substrings = gerar_substrings(str1,str2)
 }
 
-function gerar_substrings(str1, str2){
-    const tamanho = str1.length-1
-    let maior_substring = 0
-    let current_substring
-    current_substring = ''
+function get_maior_substring(str1, str2){
+    const tamanho = str1.length
+    let tamanho_maior_substring = 0
+    let indice_proxima_letra = 0
+    let maior_substring
     
-    for(let item = 0; item<=tamanho; item++){
-        let prox_item = str1[item]+str1[item+1]
-        if(contem(str1[item], str2) && contem(prox_item,str2)){
+    for(let item = 0; item < tamanho; item++){
 
-            current_substring+= str1[item]
-            console.log(current_substring)
+        if(contem(str1[item], str2)){
+
+            indice_proxima_letra = item + 1
+            maior_substring=str1[item]
+
+            while (str2.indexOf(maior_substring + str1[indice_proxima_letra]) !== -1){
+                
+                maior_substring += str1[indice_proxima_letra]
+                indice_proxima_letra++
+            }
+            if(maior_substring.length > tamanho_maior_substring){
+                tamanho_maior_substring = maior_substring.length
+            }
+
         }
     }
+
+    return tamanho_maior_substring
 }
 
 function contem(element, elements_list){
