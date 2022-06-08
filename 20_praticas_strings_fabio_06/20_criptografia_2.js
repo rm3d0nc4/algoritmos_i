@@ -4,41 +4,43 @@ function main() {
 
     const frase = input('Frase: ')
     
-    const [frase_criptografada, vogais_e_posicoes] = criptografar(frase)
-    const frase_descriptografa = descriptografar(frase_criptografada, vogais_e_posicoes)
+    const [frase_criptografada, vogais] = criptografar(frase)
+    const frase_descriptografa = descriptografar(frase_criptografada, vogais)
 
-    console.log(frase_criptografada)
-    console.log(vogais_e_posicoes)
-    console.log(frase_descriptografa)
+
+    console.log('Frase criptografada: ',frase_criptografada.split('*').join(''))
+    console.log('Frase descriptografa: ',frase_descriptografa)
 }
 
 function criptografar(str){
     let str_criptografada = ''
-    let vogais_e_posicoes = ''
+    let vogais = ''
 
     for(let elemento = 0; elemento < str.length; elemento++){
         if(!eh_vogal(str[elemento])){
             str_criptografada += str[elemento]
         } else {
-            vogais_e_posicoes += `${str[elemento]}${elemento}`
+            vogais += str[elemento]
+            str_criptografada += '*'
         }
     }
     
-    return [str_criptografada, vogais_e_posicoes]
+    return [str_criptografada, vogais]
 }
 
-function descriptografar(str, vogais_e_posicoes){
-    const lista_vogais_e_posicoes = vogais_e_posicoes.split('')
-    let str_descriptografada = str
-    let posicao = 1
-    let str_fatiada
+function descriptografar(string_criptografada, vogais){
+    let str_descriptografada = ''
+    let posicao_vogal = 0
 
-    for(let elemento = 0; elemento<=str_descriptografada.length; elemento++){
-        
+    for(let elemento = 0; elemento < string_criptografada.length; elemento++){
 
-        if(elemento == lista_vogais_e_posicoes[Number(posicao)]){
-            
+        if(string_criptografada[elemento] !== '*'){
+            str_descriptografada += string_criptografada[elemento]
+        } else {
+            str_descriptografada += vogais[posicao_vogal]
+            posicao_vogal++
         }
+
     }
 
     return str_descriptografada
@@ -53,22 +55,6 @@ function eh_vogal(letra){
         }
     }
     return false
-}
-
-function fatiar_string(str, posicao){
-    let nova_string = ''
-
-    for(let elemento = 0 ; elemento<posicao; elemento++){
-        nova_string+=str[elemento]
-    }
-    
-    nova_string+='##'
-    
-    for(let elemento = posicao ; elemento<str.length; elemento++){
-        nova_string+=str[elemento]
-    }
-
-    return nova_string.split('##')
 }
 
 main()
