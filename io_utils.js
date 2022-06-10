@@ -57,3 +57,11 @@ export function inverter_string(str){
 
     return string_invertida
 }
+
+// Busca posição de um letra no alfabeto (MAIUSCULO)
+function buscar_posicao_no_alfabeto(letra){
+    const char_code_letra = letra.charCodeAt(0)
+    const posicao = char_code_letra - 65
+
+    return posicao
+}
