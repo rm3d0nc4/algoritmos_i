@@ -1,40 +1,16 @@
-
-// Presentation error (100%)
-// Presentation error (100%)
-// Presentation error (100%)
-// Presentation error (100%)
-// Presentation error (100%)
-// Presentation error (100%)
-// Presentation error (100%)
-// Presentation error (100%)
-// Presentation error (100%)
-// Presentation error (100%)
-// Presentation error (100%)
-
-
-
-
-
-// import {ler_numeros, input} from '../io_utils.js'
-// Comentar as três próximas linhas abaixo no Beecrowd
-import fs from 'fs';
-const input = fs.readFileSync('1239_atalho_bloggo_input', 'utf8');
-
-// Descomentar linha abaixo no Beecrowd
-// const input = require('fs').readFileSync('/dev/stdin', 'utf8');
+import {ler_numeros, input} from '../io_utils.js'
 
 function main() {
-    const lines = input.split('\n')
 
-    for(let line of lines){
+    let html = input('texto com atalho:')
 
-        const html = line
-        // const html = input('texto com atalho:')
-        
+    while(html !== ''){
+
         const html_italico = add_tag_italico(html)
         const html_italico_e_negrito = add_tag_negrito(html_italico)
-    
+        
         console.log(html_italico_e_negrito)
+        html = input('texto com atalho:')
     }
 }
 

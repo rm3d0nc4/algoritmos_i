@@ -1,7 +1,7 @@
 import {ler_numeros, input} from '../io_utils.js'
 // Comentar duas próximas linhas abaixo no Beecrowd
 // import fs from 'fs';
-// const input = fs.readFileSync('1166_led_input.txt', 'utf8');
+// const input = fs.readFileSync('1168_led_input.txt', 'utf8');
 
 
 // Descomentar linha abaixo no Beecrowd

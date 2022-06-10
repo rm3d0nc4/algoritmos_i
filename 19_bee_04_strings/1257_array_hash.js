@@ -1,42 +1,26 @@
-// var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-import fs from 'fs';
-const input = fs.readFileSync('1257_array_hash_input', 'utf8');
-const  lines = input.split('\n');
 
-// import {ler_numeros, input} from '../io_utils.js'
+import {ler_numeros, input} from '../io_utils.js'
 
 function main() {
 
-    const casos =Number(lines[0])
-    let contador = 1
-    let qtd_linhas
-    let linhas
-    let linha_atual
-
-    for(let caso = 0; caso<casos; caso++) {
-
-        qtd_linhas = Number(lines[contador])
-        linhas = ''
+    const qtd_linhas =Number(input('Qtd linhas: '))
+    let linhas = ''
+    let linha;
     
-        contador++
+    for(let contador = 0; contador<qtd_linhas; contador++){
+        linha = input('Linha: ')
         
-        for(let linha = contador; linha < contador + qtd_linhas; linha++){
-            linha_atual = lines[linha]
-
-            if(linha === contador){
-                linhas += linha_atual
-            } else {
-                linhas += `\n${linha_atual}`
-            }
+        if(contador === 0){
+            linhas += linha
+        } else {
+            linhas += `\n${linha}`
         }
-
-        const array = linhas.split('\n')
-        const hash = gerar_hash_array(array)
-        console.log(hash)
-
-        contador+=qtd_linhas
     }
 
+    const array = linhas.split('\n')
+    const hash = gerar_hash_array(array)
+
+    console.log(hash)
 }
 
 function gerar_hash_array(array){
