@@ -1,0 +1,16 @@
+1º passo: Ler o número da primeira prova
+2º passo: Ler o número de nadadores da primeira prova
+3º passo: Enquanto o número da prova e o número de nadadores for diferente de 0:
+    3.1: Para cada nadador:
+        3.1.1: Ler nome
+        3.1.2: Ler classificação
+        3.1.3: Ler tempo que levou para concluir a prova
+        3.1.4: Ler time
+        3.1.5: Obter pontuacao, de acordo com a classificacao
+        3.1.6: Somar a pontuação do nadador à pontuação geral do time
+    3.2: Ler outro número da prova
+    3.3: Ler outro número de nadadores
+    ...
+4º passo: escrever pontuação dos dois times
+5º passo: Verificar qual time obteve maior pontuação
+6º passo: escrever na tela o nome do time vencedor
