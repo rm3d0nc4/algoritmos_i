@@ -14,6 +14,11 @@ export function ler_numeros(o_que) {
         return numero
 }
 
+// Função para auxiliar na leitura de um único número
+export function ler_numero(o_que) {
+    const numero = Number(input(`${o_que}: `))
+    return numero
+}
 
 // Função para auxiliar na leitura das datas
 export function ler_data( de_que = ' '){
