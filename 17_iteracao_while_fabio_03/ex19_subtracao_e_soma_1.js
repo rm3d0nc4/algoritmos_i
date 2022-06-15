@@ -8,11 +8,14 @@ function main() {
     let resultado = 0
 
     while(contador1<=n){
-        resultado+=(contador1/contador2)
-        contador1++
-        contador2--
 
-        resultado-=(contador2/contador1)
+        if(eh_par(contador1)){
+
+            resultado-=(contador1/contador2)
+        } else {
+            
+            resultado+=(contador2/contador1)
+        }
         contador1++
         contador2--
     }
@@ -20,5 +23,7 @@ function main() {
     console.log(`Resultado: ${resultado}`)
 
 }
+
+const eh_par = n => n % 2 === 0
 
 main()
