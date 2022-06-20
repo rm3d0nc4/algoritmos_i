@@ -6,12 +6,18 @@ function main() {
     let resultado = 0 
 
     for(let counter=1;counter<=n;counter++){
-        resultado+=(1/counter)
-        counter++
-        resultado-=(1/counter)
+        if(eh_par(counter)){
+
+            resultado-=(1 / counter)
+        } else {
+            
+            resultado+=(1 / counter)
+        }
     }
 
-    console.log(`Resultado: ${resultado}`)
+    console.log(`Resultado: ${resultado.toFixed(2)}`)
 }
+
+const eh_par = n => n % 2 === 0
 
 main()

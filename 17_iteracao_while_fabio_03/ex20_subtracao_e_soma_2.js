@@ -3,20 +3,25 @@ import {ler_numeros} from '../io_utils.js'
 function main() {
 
     const [n] = ler_numeros('um número')
-    let contador =1
-    let contador2 = n
+    let contador1 =1
     let resultado = 0 
 
-    while(contador<=n){
+    while(contador1<=n){
 
-        resultado+=(1/contador)
-        contador++
+        if(eh_par(contador1)){
 
-        resultado-=(1/contador)
-        contador++
+            resultado-=(1 / contador1)
+        } else {
+            
+            resultado+=(1 / contador1)
+        }
+        contador1++
+
     }
 
-    console.log(`Resultado: ${resultado}`)
+    console.log(`Resultado: ${resultado.toFixed(2)}`)
 }
+
+const eh_par = n => n % 2 === 0
 
 main()
