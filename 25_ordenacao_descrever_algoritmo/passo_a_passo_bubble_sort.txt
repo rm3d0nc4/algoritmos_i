@@ -1,0 +1,22 @@
+##############################################################################
+##############################################################################
+##									                                        ##
+##									                                        ##
+## Enquanto os elementos não estiverem ordenados:			                ##
+##									                                        ##
+## 1º passo: Percorrer todas as posições do vetor verificando:		        ##
+## 	1.1)se o elemento da posição atual é maior que o elemento 	            ##
+## 	    da próxima posição. Se sim, inverter a posição dos elementos.       ##
+## 	    Se não, conservar os elementos nas suas respectivas posições e      ##
+##	    pular para o próximo elemento.				                        ##
+##									                                        ##
+## 2º passo: Percorrer todas as posições do vetor, exceto a última posição, ##
+##	  fazendo a mesma verificação do 1º passo (identificando o maior        ##
+##	  e o menor elemento e invertendo as posições).			                ##
+##									                                        ##
+## 3º, 4º, ..., Nº passo: Percorrer todos os elementos do vetor, exceto a   ##
+##		       última posição percorrida no passo anterior,                 ##
+##		       fazendo a mesma verificação do 1º passo.		                ##
+##									                                        ##
+##############################################################################
+##############################################################################
