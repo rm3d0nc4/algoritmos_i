@@ -1,3 +1,19 @@
+import { ler_numero, input } from "./io_utils.js"
+
+export function criar_vetor() {
+    const tamanho = ler_numero('Tamanho')
+    const valor_inicial_padrao = input('Valor inicial padrão:')
+    let vetor
+
+    if( valor_inicial_padrao !== '') {
+        vetor = new Array(tamanho).fill(valor_inicial_padrao)
+    } else {
+        vetor = new Array(tamanho)
+    }
+
+    return vetor
+}
+
 export function get_maior_valor_e_posicao(vetor) {
     let maior_valor = 0
     let posicao_maior_valor
@@ -40,4 +56,57 @@ export function get_menor_valor_e_posicao(vetor) {
     }
 
     return [menor_valor, Number(posicao_menor_valor)]
+}
+
+
+
+export function ordenar_vetor(vetor) {
+    let novo_vetor = []
+    let posicao_menor_elemento
+
+    for(let elemento of vetor){
+
+        posicao_menor_elemento = get_posicao_menor_valor(vetor)
+        novo_vetor[novo_vetor.length] = vetor[posicao_menor_elemento]
+
+        vetor = remover_elemento(posicao_menor_elemento, vetor)
+    }
+
+    return novo_vetor
+}
+
+export function get_posicao_menor_valor(vetor) {
+    let posicao_menor_elemento = 0
+
+    for(let posicao = 0; posicao < vetor.length; posicao++) {
+
+        if(vetor[posicao] < vetor[posicao_menor_elemento]) {
+            posicao_menor_elemento = posicao
+        }
+    }
+
+    return posicao_menor_elemento
+}
+
+export function remover_elemento(posicao_elemento,vetor) {
+    let novo_vetor = []
+
+    for(let posicao = 0; posicao < vetor.length; posicao++) {
+
+        if(posicao !== posicao_elemento) {
+            novo_vetor[novo_vetor.length] = vetor[posicao]
+        }
+    }
+    return novo_vetor
+}
+
+export function n_ocorrencias_de_um_elemento_no_vetor(elemento, vetor) {
+    let contador = 0
+
+    for(let elemento_vetor of vetor) {
+        if(elemento === elemento_vetor) {
+            contador++
+        }
+    }
+    return contador
 }

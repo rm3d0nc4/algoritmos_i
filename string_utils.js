@@ -92,3 +92,18 @@ export function remover_elemento(posicao_elemento,texto) {
     }
     return novo_texto
 }
+
+export function converter_para_decimal(bin) {
+    let expoente = bin.length-1
+    let decimal = 0
+    let valor_posicao_atual
+
+    for(let num = 0; num<bin.length; num++){
+        valor_posicao_atual = Number(bin[num])*2**expoente
+        decimal+=valor_posicao_atual
+        expoente--
+    }
+
+    return decimal
+
+}

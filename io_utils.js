@@ -70,3 +70,9 @@ function buscar_posicao_no_alfabeto(letra){
 
     return posicao
 }
+
+export function get_numero_aleatorio(valor_inicial, valor_final) {
+
+    const numero = Math.random() * ( valor_final - valor_inicial)
+    return Math.floor(numero) + valor_inicial
+}
