@@ -35,6 +35,8 @@ function bubble_sort(elementos) {
                 elementos[posicao+1] = elemento_armazenado
             }
         }
+        
+        console.log(elementos)
         contador--
     }
 
