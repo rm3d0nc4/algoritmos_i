@@ -14,6 +14,14 @@ export function criar_vetor() {
     return vetor
 }
 
+export function criar_vetor_2(tamanho, valor_inicial) {
+    let vetor
+
+        vetor = new Array(tamanho).fill( undefined || valor_inicial)
+
+    return vetor
+}
+
 export function get_maior_valor_e_posicao(vetor) {
     let maior_valor = 0
     let posicao_maior_valor
@@ -109,4 +117,25 @@ export function n_ocorrencias_de_um_elemento_no_vetor(elemento, vetor) {
         }
     }
     return contador
+}
+
+export function contar_elemento_vetor(elemento, vetor){
+    let qtd = 0
+
+    for(let indice = 0; indice < vetor.length; indice++){
+        if(vetor[indice] === elemento){
+            qtd++
+        }
+    }
+    return qtd
+}
+
+export function somar_elementos_vetor(vetor) {
+    let soma = 0
+
+    for(let valor of vetor) {
+        soma += valor
+    }
+
+    return soma
 }

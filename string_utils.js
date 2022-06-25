@@ -107,3 +107,16 @@ export function converter_para_decimal(bin) {
     return decimal
 
 }
+
+export function alinhar_texto_a_direita(texto, qtd_espaco){
+    let espacos = ''
+    let texto_alinhado
+
+    for (let index = 0; index < qtd_espaco; index++) {
+        espacos+=' '
+    }
+    texto_alinhado = espacos+texto
+
+    return texto_alinhado
+
+}
