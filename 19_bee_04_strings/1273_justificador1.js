@@ -28,7 +28,7 @@ function main() {
 
         for(let palavra of palavras) {
             qtd_espacos = tam_maior_texto-palavra.length
-            texto_alinhado = alinhar_texto(palavra, qtd_espacos)
+            texto_alinhado = alinhar_texto_a_direita(palavra, qtd_espacos)
         
             console.log(texto_alinhado)
             
@@ -39,7 +39,7 @@ function main() {
 
 }
 
-function alinhar_texto(texto, qtd_espaco){
+function alinhar_texto_a_direita(texto, qtd_espaco){
     let espacos = ''
     let texto_alinhado
 
