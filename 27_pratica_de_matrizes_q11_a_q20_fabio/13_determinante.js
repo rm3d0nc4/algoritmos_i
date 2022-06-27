@@ -3,7 +3,7 @@ import { eh_da_diagonal_principal, remover_linha_matriz, eh_elemento_da_diagonal
 import { criar_vetor, criar_vetor_2 } from './../array_utils.js';
 
 function main() {
-    const ordem = ler_numero('Ordem')
+    const ordem = ler_numero('Ordem (2 ou 3)')
     const matriz = gerar_matriz(ordem, ordem)
 
     let matriz_povoada = povoar_matriz(matriz, [0,10])
@@ -14,30 +14,39 @@ function main() {
     let coluna_a_ser_movida
     let soma = 0
     let subtracao = 0
+    let determinante
+    print_matriz(matriz_povoada)
 
-    for(let linha = 0; linha < matriz_povoada.length; linha++) {
-        multiplicacao_principal = 1
-        multiplicacao_secundaria = 1
 
-        print_matriz(matriz_povoada)
-        multiplicacao_principal *=  multiplicar_diagonal_matriz(matriz_povoada)
-        multiplicacao_secundaria *= multiplicar_diagonal_matriz(matriz_povoada, false)
+    if(ordem === 2) {
+        determinante = multiplicar_diagonal_matriz(matriz_povoada) - multiplicar_diagonal_matriz(matriz_povoada, false)
+    } else {
 
-        
-        soma += multiplicacao_principal
-        subtracao += multiplicacao_secundaria
-        
-        coluna_a_ser_movida = transpor_matriz(matriz_povoada)[0]
-
-        matriz_povoada = push_coluna(coluna_a_ser_movida, matriz_povoada)
-        matriz_povoada = shift_coluna(0, matriz_povoada)
+        for(let linha = 0; linha < matriz_povoada.length; linha++) {
+            multiplicacao_principal = 1
+            multiplicacao_secundaria = 1
+    
+            multiplicacao_principal *=  multiplicar_diagonal_matriz(matriz_povoada)
+            multiplicacao_secundaria *= multiplicar_diagonal_matriz(matriz_povoada, false)
+    
+            
+            soma += multiplicacao_principal
+            subtracao += multiplicacao_secundaria
+            
+            coluna_a_ser_movida = transpor_matriz(matriz_povoada)[0]
+    
+            matriz_povoada = push_coluna(coluna_a_ser_movida, matriz_povoada)
+            matriz_povoada = shift_coluna(0, matriz_povoada)
+    
+        }
+    
+        determinante = soma - subtracao
+    
+        console.log(`Soma: ${soma}`)
+        console.log(`Subtração: ${subtracao}`)
 
     }
 
-    const determinante = soma - subtracao
-
-    console.log(`Soma: ${soma}`)
-    console.log(`Subtração: ${subtracao}`)
     console.log(`Determinante da matriz: ${determinante}`)
     
 }
