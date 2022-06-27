@@ -45,7 +45,7 @@ export function somar_todos_elementos(matriz) {
 
     for(let i = 0; i < matriz.length; i++ ) {
         for (let j = 0; j < matriz[i].length; j++) {
-            soma += matriz[j][i]
+            soma += matriz[i][j]
         }
     }
 
@@ -221,6 +221,86 @@ export function shift_coluna(posicao, matriz) {
 
     return nova_matriz_transposta
 }
+
+export function gerar_tabuleiro(x1, y1, x2, y2) {
+    const matriz = gerar_matriz(8,8)
+    for(let i = 0; i < matriz.length; i++) {
+        for(let j = 0; j < matriz[i].length; j++) {
+
+            if((i === y1 - 1 && j === x1 - 1) || (i === y2 - 1 && j === x2 - 1)) {
+                matriz[i][j] = 1
+
+            } else {
+                matriz[i][j] = 0
+            }
+        }
+    }
+    console.table(matriz)
+}
+
+export function filtrar_elementos_matriz(matriz, condicao) {
+    const ordem = matriz.length - 1
+    let matriz_filtrada = new Array()
+    let k = 0
+    let l
+
+    for(let i =0; i < matriz.length; i++) {
+        matriz_filtrada[k] = new Array()
+        l = 0
+
+        for(let j = 0; j < matriz[i].length; j++) {
+
+            if(condicao(i, j, ordem)) {
+                matriz_filtrada[k][l] = matriz[i][j]
+                l++
+            }
+        }
+        k++
+    }
+
+    matriz_filtrada = filtrar_linhas_validas(matriz_filtrada)
+    return matriz_filtrada
+}
+
+function filtrar_linhas_validas(matriz) {
+    let nova_matriz = new Array()
+
+    let i = 0
+    for(let linha of matriz) {
+        if(linha.length !== 0) {
+            nova_matriz[i] = linha
+            i++
+        }
+    }
+
+    return nova_matriz
+}
+
+export function get_qtd_elementos_matriz(matriz) {
+    let contador = 0
+
+    for(let i = 0; i < matriz.length; i++ ) {
+        contador += matriz[i].length
+    }
+    return  contador
+}
+
+export const esta_acima_da_diagonal_principal = (i, j) => j > i
+export const esta_abaixo_da_diagonal_principal = (i, j) => i > j
+export const esta_acima_da_diagonal_secundaria = (i, j, ordem) => i + j < ordem
+export const esta_abaixo_da_diagonal_secundaria = (i, j, ordem) => i + j > ordem
+
+export const esta_na_area_superior = (i, j, ordem) => 
+esta_acima_da_diagonal_principal(i,j) && esta_acima_da_diagonal_secundaria(i, j, ordem)
+
+export const esta_na_area_inferior = (i, j, ordem) => 
+    esta_abaixo_da_diagonal_principal(i,j) && esta_abaixo_da_diagonal_secundaria(i, j, ordem)
+
+export const esta_na_area_esquerda = (i, j, ordem) => 
+    esta_abaixo_da_diagonal_principal(i,j) && esta_acima_da_diagonal_secundaria(i, j, ordem)
+
+export const esta_na_area_direita = (i, j, ordem) => 
+    esta_acima_da_diagonal_principal(i,j) && esta_abaixo_da_diagonal_secundaria(i, j, ordem)
 
 export const eh_elemento_da_diagonal = (i, j, ordem) => eh_da_diagonal_principal(i,j) || eh_da_diagonal_secundaria(i, j, ordem)
 export const eh_da_diagonal_principal = (i,j) => i === j

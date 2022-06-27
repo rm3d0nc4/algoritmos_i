@@ -139,3 +139,22 @@ export function somar_elementos_vetor(vetor) {
 
     return soma
 }
+
+export function multiplicar_elementos_vetor(vetor) {
+    let resultado = 1
+
+    for(let elemento of vetor) {
+        resultado *= elemento
+    }
+
+    return resultado
+}
+
+
+export function media_elementos_vetor(vetor) {
+    const soma  = somar_elementos_vetor(vetor)
+    const media = soma/vetor.length
+
+    return media
+}
+
