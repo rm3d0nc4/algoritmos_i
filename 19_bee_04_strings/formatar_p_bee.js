@@ -59,6 +59,7 @@ function main() {
         contador_saidas++
         contador += qtd_linhas
     }
+    return qtd
 }
 
 function alinhar_texto_a_direita(texto, qtd_espaco){
