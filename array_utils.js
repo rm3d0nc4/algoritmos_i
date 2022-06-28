@@ -110,3 +110,15 @@ export function n_ocorrencias_de_um_elemento_no_vetor(elemento, vetor) {
     }
     return contador
 }
+
+export function remover_elementos_vazios(vetor) {
+    let novo_vetor = new Array()
+
+    for(let elemento of vetor) {
+        if(elemento !== '') {
+            novo_vetor[novo_vetor.length] = elemento
+        }
+    }
+
+    return novo_vetor
+}
