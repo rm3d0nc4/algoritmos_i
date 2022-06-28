@@ -10,8 +10,9 @@ function main() {
 
     let soma = 0
 
-    for( let elemento of vetorA){
-        soma+=elemento
+    for( let i = 0, j = vetorA.length - 1; i < vetorA.length/2; i++, j--){
+        soma += (vetorA[i] - vetorA[j])**2
+        // console.log(`vetorA[${i}] - vetorA[${j}]`)
     }
 
     console.log('Vetor:')

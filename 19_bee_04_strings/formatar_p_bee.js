@@ -1,9 +1,6 @@
 import fs from 'fs';
 const input = fs.readFileSync('1237_comparacao_subtring_input', 'utf8');
 
-// Descomentar linha abaixo no Beecrowd
-// const input = require('fs').readFileSync('/dev/stdin', 'utf8');
-const lines = input.split('\n')
 
 function main() {
     let contador = 0
@@ -45,5 +42,7 @@ function main() {
         contador++
     }
 }
+
+
 
 main()

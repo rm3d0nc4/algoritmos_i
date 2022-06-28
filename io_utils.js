@@ -71,8 +71,12 @@ function buscar_posicao_no_alfabeto(letra){
     return posicao
 }
 
-export function get_numero_aleatorio(valor_inicial, valor_final) {
+export function get_numero_aleatorio(valor_inicial = 0, valor_final = 100) {
 
     const numero = Math.random() * ( valor_final - valor_inicial)
     return Math.floor(numero) + valor_inicial
 }
+
+export const eh_maior_que = (valor_atual, maior_valor) => valor_atual > maior_valor
+export const eh_menor_que = (valor_atual, menor_valor) => valor_atual < menor_valor
+export const eh_igual = (valor1, valor2) => valor1 === valor2
