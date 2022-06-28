@@ -1,5 +1,5 @@
 import fs from 'fs';
-const input = fs.readFileSync('1262_leitura_multipla_input', 'utf8');
+const input = fs.readFileSync('1237_comparacao_subtring_input', 'utf8');
 
 // Descomentar linha abaixo no Beecrowd
 // const input = require('fs').readFileSync('/dev/stdin', 'utf8');
@@ -7,66 +7,43 @@ const lines = input.split('\n')
 
 function main() {
     let contador = 0
+    let string1, string2
+    let tam_maior, k, l
+    let texto
 
-    while(!EOF(lines[contador])){
+    while(contador < lines.length){  
+        if(lines[contador] === '') {
+            break
+        } 
 
-        const processos = lines[contador]
+        string1 = lines[contador]
         contador++
-        const qtd_leituras_simutaneas = lines[contador]
+        string2 = lines[contador]
+        tam_maior = 0
 
-        let qtd_leitura
-        let qtd_ciclos = 0
-        let qtd_processos_leitura = 0
-        let qtd_processos_escrita = 0
+        for(let i = 0; i < string1.length; i++) {
+            
+            for(let j= 0; j < string2.length; j++) {
+                
+                texto = ''
+                if(string1[i] === string2[j]) {
+                    k = i, l = j
+                    
+                    while(string1[k] === string2[l] && string1[k] !== undefined) {
+                        texto+= string1[k]
+                        k++, l++
+                    }
+                }
 
-        qtd_processos_escrita = contar_elemento('W', processos)
-        qtd_ciclos += qtd_processos_escrita
-        
-        const leituras = remover_elementos_vazios(processos.split('W'))
-        
-        for( let leitura of leituras) {
-            if(leitura.length > qtd_leituras_simutaneas) {
-
-                qtd_leitura = Math.ceil(leitura.length / qtd_leituras_simutaneas)
-                qtd_processos_leitura += qtd_leitura
-
-            } else {
-                qtd_processos_leitura++
+                if(texto.length > tam_maior) {
+                    tam_maior = texto.length
+                }
             }
         }
 
-        qtd_ciclos += qtd_processos_leitura
-
-        console.log(qtd_ciclos)
+        console.log(tam_maior)
         contador++
     }
-    
-}
-
-const EOF = item => item === ''
-
-function remover_elementos_vazios(vetor) {
-    let novo_vetor = new Array()
-
-    for(let elemento of vetor) {
-        if(elemento !== '') {
-            novo_vetor[novo_vetor.length] = elemento
-        }
-    }
-
-    return novo_vetor
-}
-
-function contar_elemento(elemento, string){
-    let qtd = 0
-
-    for(let indice = 0; indice < string.length; indice++){
-        
-        if(string[indice] === elemento){
-            qtd++
-        }
-    }
-    return qtd
 }
 
 main()
