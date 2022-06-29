@@ -1,94 +1,48 @@
 import fs from 'fs';
-// import { alinhar_texto_a_direita } from '../string_utils.js';
-// import { ler_numero, input } from '../io_utils.js';
-const input = fs.readFileSync('1278_justificador2_input', 'utf8');
-var lines = input.split('\n');
+const input = fs.readFileSync('1237_comparacao_subtring_input', 'utf8');
 
-function main() {   
 
-    let contador = 0, contador_saidas = 0
-    let qtd_linhas, linha, linha_formatada, linhas_formatadas
-    let textos, texto_alinhado, tam_maior_texto
-    let qtd_espacos, saida
-    
-    while( true ) {
-        qtd_linhas = Number(lines[contador])
-        
-        if(qtd_linhas === 0) {
+function main() {
+    let contador = 0
+    let string1, string2
+    let tam_maior, k, l
+    let texto
+
+    while(contador < lines.length){  
+        if(lines[contador] === '') {
             break
-        }
+        } 
 
-        tam_maior_texto = 0
-        linhas_formatadas = ''
-        saida = ''
+        string1 = lines[contador]
         contador++
+        string2 = lines[contador]
+        tam_maior = 0
 
-        for(let i = contador; i < contador + qtd_linhas; i++){
-            linha = lines[i].split(' ')
-            linha_formatada = formatar(linha)
-    
-            if(eh_maior(linha_formatada.length, tam_maior_texto)) {
-                tam_maior_texto = linha_formatada.length
-            }
-    
-            i === contador ? linhas_formatadas += `${linha_formatada}`
-            : linhas_formatadas += `*${linha_formatada}`
+        for(let i = 0; i < string1.length; i++) {
             
-        }
-        
-        textos = linhas_formatadas.split('*')
-        
-        for (let i = 0; i < textos.length; i++) {
-            qtd_espacos = tam_maior_texto - textos[i].length
-        
-            texto_alinhado = alinhar_texto_a_direita(textos[i], qtd_espacos)
+            for(let j= 0; j < string2.length; j++) {
                 
-            i === 0 ? saida += texto_alinhado
-            : saida += `*${texto_alinhado}` 
+                texto = ''
+                if(string1[i] === string2[j]) {
+                    k = i, l = j
+                    
+                    while(string1[k] === string2[l] && string1[k] !== undefined) {
+                        texto+= string1[k]
+                        k++, l++
+                    }
+                }
+
+                if(texto.length > tam_maior) {
+                    tam_maior = texto.length
+                }
+            }
         }
 
-        saida = saida.split('*').join('\n')
-
-        if(contador_saidas !== 0) {
-            console.log('')
-            console.log(saida)
-        } else {
-            console.log(saida)
-        }
-
-        contador_saidas++
-        contador += qtd_linhas
+        console.log(tam_maior)
+        contador++
     }
-    return qtd
 }
 
-function alinhar_texto_a_direita(texto, qtd_espaco){
-    let espacos = ''
-    let texto_alinhado
-
-    for (let index = 0; index < qtd_espaco; index++) {
-        espacos+=' '
-    }
-    texto_alinhado = espacos+texto
-
-    return texto_alinhado
-
-}
-
-function formatar(elementos){
-    let string_formatada = ''
-
-    for( let elemento of elementos) {
-        if(elemento !== '') {
-            string_formatada === '' ? string_formatada += elemento
-            : string_formatada += ` ${elemento}`
-            
-        }
-    }
-    return string_formatada
-}
-
-const eh_maior = (n1, n2) => n1>n2
 
 
 main()
