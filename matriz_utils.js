@@ -5,7 +5,7 @@ export function print_matriz(matriz) {
     console.table(matriz)
 }
 
-export function gerar_matriz(n_linhas, n_colunas) {
+export function gerar_matriz(n_linhas, n_colunas = n_linhas) {
     
     const matriz = new Array(n_linhas)
     
@@ -283,6 +283,19 @@ export function get_qtd_elementos_matriz(matriz) {
         contador += matriz[i].length
     }
     return  contador
+}
+
+export function map_matriz_todos_elementos(matriz, operacao) {
+    let nova_matriz = gerar_matriz(matriz.length)
+
+    for(let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[i].length; j++) {
+
+            nova_matriz[i][j] = operacao(matriz[i][j])
+        }
+    }
+
+    return nova_matriz
 }
 
 export const esta_acima_da_diagonal_principal = (i, j) => j > i

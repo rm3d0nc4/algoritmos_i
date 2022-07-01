@@ -66,6 +66,17 @@ export function get_menor_valor_e_posicao(vetor) {
     return [menor_valor, Number(posicao_menor_valor)]
 }
 
+export function map_vetor(vetor, valor, operacao) {
+
+    let novo_vetor = criar_vetor_2(vetor.length)
+
+    for(let i= 0; i < novo_vetor.length; i++) {
+        novo_vetor[i] = operacao(vetor[i], valor)
+    }
+
+    return novo_vetor
+
+}
 
 
 export function ordenar_vetor(vetor) {
